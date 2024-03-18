@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 			.json({ error: "Invalid session id! Please provide a valid id" });
 	}
 	const videoArray = generateMockVideoData(id, batch, "video");
-	if (videoArray.length === 0) {
+	if (videoArray?.length === 0) {
 		res.status(404).json({ error: "No video data found" });
 	}
 	res.status(200);

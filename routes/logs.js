@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
 	}
 
 	const logs = await getLogData(id, batch);
+
 	if (logs?.length === 0) {
 		res.status(404).json({ error: "No logs found for this batch" });
 	} else {
